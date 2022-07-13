@@ -2,7 +2,7 @@
 
 Using AWS Lambda, S3 to keep my [personal website](http://saahilchadha.com/) synced with my LinkedIn. What's the point of a personal website that is literally just the same as my LinkedIn? Great question, we'll see...
 
-![Diagram](https://github.com/saahilchadha1/LinkedInToPersonalWebsite/blob/main/LinkedInToGithubPagesDiagram.drawio.png?raw=true)
+![Diagram](https://github.com/saahilchadha1/LinkedInToPersonalWebsite/blob/master/LinkedInToGithubPagesDiagram.drawio.png?raw=true)
 
 ## API Gateway 
 ``` 
