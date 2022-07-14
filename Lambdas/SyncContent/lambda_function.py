@@ -38,12 +38,17 @@ def lambda_handler(event, context):
                 end_year = school['timePeriod']['endDate']['year']
             except KeyError: 
                 end_year = 'Present'
-            degree = school.get('fieldOfStudy')
+            degree = school.get('degreeName')
+            field = school.get('fieldOfStudy')
+            if degree and field: 
+                degree_field = f"{degree}, {field}"
+            else:
+                degree_field = degree or field
             school_name = school['schoolName']
             description = school.get('activities')
             school_data = {
                 DATE: f"{start_year} - {end_year}",
-                TITLE: degree,
+                TITLE: degree_field,
                 POSITION: school_name,
                 DESCRIPTION: description,
                 ICON: 'icon-school'
