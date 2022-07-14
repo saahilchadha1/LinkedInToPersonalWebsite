@@ -38,11 +38,14 @@ API Gateway proxy lambda. Simply reads the `content.json` file from the `Content
 ### SyncContent Lambda 
 This is part of the ingestion pipeline. Triggered by a monthly CloudWatch job, it reads gets the latest profile information from the LinkedIn API, transforms the profile information into a properly formatted JSON, and compares with the existing `content.json` file in the `Content` S3 bucket. If there are any differences, it overwrites the `content.json` file with the newer version and sends a Slack notification.
 
+## Secrets
+For now, my LinkedIn password is stored in a gitignore'd `secrets.json` file in the `Lambdas/SyncContent/` directory
+
 ## Deploying to AWS Lambda
 Since this is a small project, I just zip up the lambda handler and runtime dependencies e.g. 
 ```
 cd Lambdas/SyncContent/package/
 zip -r ../my-deployment-package.zip .
 cd ..
-zip -g my-deployment-package.zip lambda_function.py
+zip -g my-deployment-package.zip lambda_function.py utils.py secrets.json 
 ```
