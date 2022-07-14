@@ -1,0 +1,4 @@
+.DS_STORE
+*.zip
+__pycache__/
+secrets.json

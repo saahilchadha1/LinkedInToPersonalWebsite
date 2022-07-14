@@ -3,10 +3,11 @@ import json
 import datetime
 import requests
 import logging
+from utils import read_secrets
 from linkedin_api import Linkedin
 
 LINKEDIN_USERNAME = 'saahil301@gmail.com'
-LINKEDIN_PASSWORD = '*****'
+LINKEDIN_PASSWORD = read_secrets()['LINKEDIN_PASSWORD']
 LINKEDIN_PROFILE = 'saahil-chadha'
 
 BUCKET_NAME = 'content-saahil-chadha'
